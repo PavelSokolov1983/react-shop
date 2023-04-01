@@ -3,6 +3,10 @@ main {
   margin: 40px auto;
 }
 
+.shop {
+  display: flex;
+}
+
 /* .App {
   text-align: center;
 }

@@ -30,28 +30,35 @@ export default function Shop() {
         ],
     });
 
-    // const checkProductInCart = (id) => {
-    //     let checkProduct = state.cartList.find(product => product.id) === id 
-    //     // checkProduct.amount = checkProduct.amount + 1
-    //     // console.log(checkProduct);
-    //     setState({
-    //         ...state,
-    //         cartCount: state.cartCount + 1,
-    //         cartAmount: state.cartAmount + checkProduct.price,
-    //         cartList: [
-    //                 ...state.cartList,
-    //                 state.cartList.checkProduct.amount ++    
-    //         ] 
-    //     });
-    // }
+    const checkProductInCart = (checkProduct) => {
+        checkProduct.amount++
+        
+        let uncheckProducts = state.cartList.find(product => product.id !== checkProduct.id )
+
+        console.log(checkProduct);
+        setState({
+            ...state,
+            cartCount: state.cartCount + 1,
+            cartAmount: state.cartAmount + checkProduct.price,
+            cartList: [
+                checkProduct,
+                uncheckProducts
+            ] 
+        });
+    }
 
     const addToCart = (id) => {
+        let checkProduct = state.cartList.find(product => product.id === id )
+
+        if (undefined !== checkProduct) {
+            checkProductInCart(checkProduct)
+            return
+        }
+    
         let result = state.products.find(product => {
 
             return product.id === id;
         })
-
-        // checkProductInCart()
 
         setState({
             ...state,
