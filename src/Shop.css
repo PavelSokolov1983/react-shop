@@ -1,0 +1,36 @@
+.shop {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: 2px solid rgb(235, 235, 235);
+}
+
+.cart {
+    margin-bottom: 40px;
+}
+
+.products {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 20px;
+    background-color: rgb(255, 222, 179);
+    border: 2px solid rgb(235, 235, 235);
+}
+
+.product {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: coral;
+    margin-right: 20px;
+}
+
+.add-to-cart-button {
+    background-color: greenyellow;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
